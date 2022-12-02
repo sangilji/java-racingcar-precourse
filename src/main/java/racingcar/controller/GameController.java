@@ -18,7 +18,7 @@ public class GameController {
 			move(cars);
 			OutputView.printCurrentResult(cars);
 		}
-
+		OutputView.printWinner(cars.getWinner());
 	}
 
 	private void move(Cars cars) {

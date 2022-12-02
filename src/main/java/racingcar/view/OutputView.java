@@ -1,5 +1,6 @@
 package racingcar.view;
 
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -12,6 +13,7 @@ public class OutputView {
 	private static final String PROGRESS_RESULT_MESSAGE = "실행결과";
 	private static final String CAR_RESULT = "%s : %s\n";
 	private static final String STREET = "-";
+	private static final String FINAL_WINNERS = "최종 우승자 : %s\n";
 
 	public static void printCarsNameMessage() {
 		System.out.println(INPUTTING_CARS_MESSAGE);
@@ -33,5 +35,10 @@ public class OutputView {
 			System.out.printf(CAR_RESULT, car.getName(), rail);
 		}
 		System.out.println();
+	}
+
+	public static void printWinner(List<String> winners) {
+		String winnersName = String.join(", ", winners);
+		System.out.printf(FINAL_WINNERS, winnersName);
 	}
 }
