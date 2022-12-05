@@ -8,8 +8,7 @@ public class InputView {
 	public static String inputCars() {
 		while (true) {
 			try {
-				return
-					Validator.validateNames(Console.readLine());
+				return Validator.validateNames(Console.readLine());
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}
@@ -19,7 +18,7 @@ public class InputView {
 	public static int inputTrialCount() {
 		while (true) {
 			try {
-				return Integer.parseInt(Console.readLine());
+				return Validator.checkTrialCount(Console.readLine());
 			} catch (IllegalArgumentException e) {
 				System.out.println(e.getMessage());
 			}

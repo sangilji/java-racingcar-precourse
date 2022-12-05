@@ -20,7 +20,15 @@ public class Car {
 	}
 
 	private int generateNumber() {
-		return Randoms.pickNumberInRange(0, 9);
+		int number = Randoms.pickNumberInRange(0, 9);
+		checkRandomNumber(number);
+		return number;
+	}
+
+	private void checkRandomNumber(int number) {
+		if(number<0 || number>9){
+			throw new IllegalArgumentException("[ERROR] 랜덤 값은 0에서 9사이여야합니다.");
+		}
 	}
 
 	private boolean checkCondition(int number) {

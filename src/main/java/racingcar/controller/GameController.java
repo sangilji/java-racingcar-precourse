@@ -2,6 +2,7 @@ package racingcar.controller;
 
 import racingcar.domain.Car;
 import racingcar.domain.Cars;
+import racingcar.vaildator.Validator;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
@@ -18,7 +19,7 @@ public class GameController {
 			move(cars);
 			OutputView.printCurrentResult(cars);
 		}
-		OutputView.printWinner(cars.getWinner());
+		OutputView.printWinner(Validator.checkWinner(cars.getWinner()));
 	}
 
 	private void move(Cars cars) {
@@ -26,4 +27,6 @@ public class GameController {
 			car.move();
 		}
 	}
+
+
 }
